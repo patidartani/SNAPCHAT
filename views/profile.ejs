@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title><%= title%> | SNAPCHAT</title>
+          <link rel='stylesheet' href='/stylesheets/style.css' />
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+ <body>
+          <div class="profile-page">                  
+                  <div class="profile" >
+                      <form action="/profile" method="post" enctype="multipart/form-data">
+
+                        <div class="top">
+                           <div class="one">
+                              <a href="/"><i class="ri-close-line"></i></a>
+                              <a href="/settings"><i class="ri-settings-5-line"></i></a>
+                           </div>
+                          <!-- --------------- -->
+                          <img height="100" width="100" style="border-radius: 50%; position: relative; object-fit: contain; background-size:  cover; background-position: center; left: 35%;"  src="/uploads/<%=user.avatar%>" alt="" />
+                          <input type="file" name="avatar" />    
+                          <input type="hidden" name="oldavatar"  value="<%= user.avatar%>"  />
+                          <button  style="left: 70%; cursor: pointer; color: rgba(255, 255, 255, 0.634);">Save Profile</button>                              
+                          <!-- ---------------- -->
+                      </div> 
+                  <div class="share">
+                     <a href="/"><i class="ri-emotion-line"></i>Add Bitmoji</a>
+                     <a href="/"><i class="ri-trophy-line"></i>Trophies</a>
+                     <a href="/"><i class="ri-share-line"></i>Share</a>
+                  </div>
+                  <div class="friends">
+                      <a href="/"><i class="ri-user-add-line"></i> Add Friends</a>
+                  </div>
+                  <div class="contact">
+                     <a href="/"><i class="ri-contacts-line"></i>Sync Contacts </a>
+                  </div>
+                  <div class="favourite">
+                     <a href="/"><i class="ri-heart-line"></i></i>Favourites<i style="left: 200%;" class="ri-arrow-right-s-line"></i></a>
+                  </div>
+                   <div class="stories">
+                        <form action="/stories" method="post">
+                           <a href="/stories"><i class="ri-camera-line"></i>My Story<i style="left: 230%;" class="ri-more-2-fill"></i></a>
+                        </form>
+                    </div>
+                    <button><a href="/stories"><i class="ri-add-circle-line"></i> Create New Story</a></button>
+                      </form>
+         </div> 
+         </div>        
+</body>
+</html>

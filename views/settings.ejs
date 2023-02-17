@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title><%= title%> | SNAPCHAT</title>
+          <link rel='stylesheet' href='/stylesheets/style.css' />
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="setting">
+        <form class="set" action="/settings" method="post">
+             <a href="/home"><i  style="font-size: 30px; color:#484848 ; right: 4px; position: relative; cursor: pointer; top: 2px;" class="ri-arrow-left-s-line"></i> </a>
+            <h1>Settings</h1>
+            <form class="sets" action="/settings" method="POST">
+                <label for="">Email address:</label>
+                <input name="email" type="email" value="<%= user.email%>"/>
+                <label for="">Username:</label>
+                <input name="username" type="text" value="<%= user.username%>" />
+                <label for="">Name:</label>
+                <input name="name" type="text" value="<%= user.name%>" />
+                <a style="text-decoration: none; color: black" href="/profile">
+                        <span>
+                            Profile Information <br />
+                            <small>Edit Bio, about, avatar</small>
+                        </span>
+                        <div
+                            style="
+                                width: 50px;
+                                height: 50px;
+                                background-size: cover;
+                                border-radius: 50%;
+                                position: relative;
+                                left: 60%;
+                                top: 50%;
+                                background-position: center;
+                                background-image: url('/uploads/<%= user.avatar %>');
+                            "
+                        ></div>
+
+                    </label>
+                </a>
+                <button>Save Information</button>
+                <div class="information">
+                       <h6>MORE INFORMATION</h6>
+                       <p>Privacy Policy</p>
+                       <p>Safety Center</p>
+                       <p>Terms of Service</p>
+                       <p>Other Legal</p>
+                </div>
+                <div class="accounts">
+                    <h6>ACCOUNT ACTIONS</h6>
+                    <p>Clear Cache</p>
+                    <p>Clear Conversation</p>
+                    <p>Clear Search History</p>
+                    <p>Blocked</p>
+                    <p>My Data</p>
+                    <p>Saved Login Information</p>
+             </div>
+                <div class="reset">
+                    <h6>Password</h6>
+                    <p><a href="/reset-password">Reset Password</a></p>
+                </div>
+            </form>
+            <a class="dlt" href="/delete">Delete Account</a>
+     </form>
+    </div>
+</body>
+
+</html>

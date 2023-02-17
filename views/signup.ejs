@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title><%= title%> | SNAPCHAT</title>
+          <link rel='stylesheet' href='/stylesheets/style.css' />
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+          <div id="login-page">
+                    <div class="login">
+                              <img height="50px" width="50px" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c536.png" alt="">
+                      <h2 class="login-title">Signup</h2>
+                      <p class="notice">to create your first ad</p>
+                      <form action="/signup" method="post" class="form-login">
+                              <label for="Name">Name</label>
+                              <div class="input-name">
+                                <!-- <i class='fas fa-user-circle'></i> -->
+                                <input type="name" name="name" placeholder="Enter your Name" required>
+                              </div>
+                              <label for="Username">Username</label>
+                              <div class="input-username">
+                                <!-- <i class='fas fa-user-circle'></i> -->
+                                <input type="username" name="username" placeholder="Enter your Username" required>
+                              </div>
+                              <label for="email">E-mail</label>
+                        <div class="input-email">
+                          <i class="fas fa-envelope icon"></i>
+                          <input type="email" name="email" placeholder="Enter your e-mail" required>
+                        </div>
+                        <label for="password">Password</label>
+                        <div class="input-password">
+                          <i class="fas fa-lock icon"></i>
+                          <input type="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="checkbox">
+                          <label for="remember">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                          </label>
+                        </div>
+                        <button type="submit"><i class="fas fa-door-open"></i> Sign up & Accept</button>
+                      </form>
+            
+                    </div>                  
+                  </div>
+</body>
+</html>

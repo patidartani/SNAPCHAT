@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title><%= title%> | SNAPCHAT</title>
+          <link rel='stylesheet' href='/stylesheets/style.css' />
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+          <div class="home-story">
+                    <div class="chat">
+                           <div class="navigation">
+                                  <div class="nav-left">
+                                         <a href="/profile"><i class="ri-user-smile-fill"></i></a>
+                                         <a href="/lists"> <i class="ri-search-line"></i></a>
+                                  </div>
+                                  <div class="nav-center">
+                                         <h1>Stories</h1>
+                                  </div>
+                                  <div class="nav-right">
+                                         <a href="/stories"><i class="ri-user-add-fill"></i></a>
+                                         <a href="/settings"><i class="ri-more-fill"></i></a>
+                                  </div>
+                           </div>
+
+                           <div class="card">
+                              <div id="for-scr">
+                                    <div id="progress">
+                                          <div id="growth"></div>
+                                    </div>
+                              </div>
+                              <div style="left: 3%; top: 1%; position: relative; font-family: Arial, Helvetica, sans-serif; font-weight: bolder;" class="text">Friends</div>
+                              <div id="storiyan"></div> 
+                          </div>
+
+                          <div class="bottom">
+                              <a href="/map"><i class="ri-map-pin-line"></i></a>
+                              <a href="/home"><i class="ri-chat-4-line"></i></a>
+                              <a href="/camera"><i class="ri-camera-line"></i></a>
+                              <a href="/stories"><i class="ri-user-add-line"></i></a>
+                              <a href="/"><i class="ri-play-line"></i></a>
+                       </div>
+      
+                         
+          </div>
+          </div>
+
+
+
+
+             <!-- -----------script------------ -->
+             <script>
+                    var arr = [
+          {img : "https://images.unsplash.com/photo-1611042553365-9b101441c135?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWwlMjBnaXJsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"},
+          {img : "https://images.unsplash.com/photo-1556347961-f9521a88cb8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWxzfGVufDB8fDB8fA%3D%3D&w=1000&q=80"},
+          {img : "https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZhc2hpb24lMjBtb2RlbHN8ZW58MHx8MHx8&w=1000&q=80"},
+          {img : "https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwbW9kZWx8ZW58MHx8MHx8&w=1000&q=80"},
+          {img : "https://images.unsplash.com/photo-1617922001439-4a2e6562f328?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1vZGVsc3xlbnwwfHwwfHw%3D&w=1000&q=80"},
+          {img : "https://media.istockphoto.com/photos/woman-in-hat-portrait-fashion-luxury-model-in-black-summer-hat-with-picture-id1311134070?b=1&k=20&m=1311134070&s=170667a&w=0&h=vr4SkVZB6HTdalvBccpInQB8agmuhga5Cj2Mno_NEaM="},
+          {img : "https://images.unsplash.com/photo-1610509528015-e4c30d95a5cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVtYWxlJTIwbW9kZWx8ZW58MHx8MHx8&w=1000&q=80"},
+          {img : "https://wallpapercave.com/wp/wp2982141.jpg"},
+          {img : "https://media.istockphoto.com/id/938197896/photo/asian-baby-sit-with-teddy-bear.jpg?b=1&s=170667a&w=0&k=20&c=R_MHqyep1wqxrSzwUWk3U4EBnBodEjIx2xBNP27HFKQ="},
+          {img :   " https://tse4.mm.bing.net/th?id=OIP.jVhj3o9Y37r3libCCAS45AHaLH&pid=Api&P=0 "},
+] 
+
+var clutter = "" ;
+arr .forEach(function(elem, idx) {
+          clutter += ` <div class="story"> 
+          <img   id="${idx}" src="${elem.img}" >                                                                                                                                                                                                                         
+    </div>`
+})
+          document.querySelector("#storiyan").innerHTML = clutter ;
+          
+  var grow = 0;
+
+  document.querySelector("#storiyan").addEventListener("click", function (dets) {
+          document.querySelector("#for-scr").style.display = `initial`
+          document.querySelector("#for-scr").style.backgroundImage = `url(${arr[dets.target.id].img})`
+          if(grow <= 100) {
+                    setInterval(function(){
+                              document.querySelector("#growth").style.width = `${grow}%`
+                              grow = grow+1
+                    }, 30)
+          }else{
+                   grow = 0
+          }
+          setTimeout(function() {
+                    document.querySelector("#for-scr").style.display = `none`
+          }, 3000)
+  })  
+             </script>
+</body>
+</html>
